@@ -3,12 +3,12 @@
             // formulaire
 
 
-    if(isset($_POST['prenom']) && isset($_POST['nom'])) {  ## Si nom prenom existe
+    if(isset($_GET['prenom']) && isset($_GET['nom'])) {  ## Si nom prenom existe
 
                 ### proteger contre les injections XSS
                 
-        $prenom = htmlspecialchars($_POST['prenom']);
-        $nom    = htmlspecialchars($_POST['nom']);
+        $prenom = htmlspecialchars($_GET['prenom']);
+        $nom    = htmlspecialchars($_GET['nom']);
 
         echo "Bonjour ".$prenom.' '.$nom.' !';  ## Alors affiches moi ce message
 
@@ -19,7 +19,7 @@
 
             // Création du formulaire
 
-    echo '<form method="post" action="index.php">
+    echo '<form method="GET" action="index.php">
             <p>
                 <table>
                     <tr>
